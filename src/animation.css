@@ -1,19 +1,26 @@
-/* Animation pour les messages entrants/sortants */
+.message-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+/* Animations */
 .message-animation-enter {
   opacity: 0;
-  transform: translateY(20px) scale(0.95);
+  transform: translateY(15px) scale(0.95);
 }
+
 .message-animation-enter-active {
   opacity: 1;
   transform: translateY(0) scale(1);
-  transition: all 300ms ease-in-out;
+  transition: all 300ms ease;
 }
+
 .message-animation-exit {
   opacity: 1;
-  transform: translateY(0);
 }
+
 .message-animation-exit-active {
   opacity: 0;
-  transform: translateY(-20px);
-  transition: all 300ms ease-in-out;
+  transform: translateY(-10px);
+  transition: all 300ms ease;
 }
