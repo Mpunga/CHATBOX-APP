@@ -1,15 +1,31 @@
-import Rebase from 're-base'
-import firebase from 'firebase/app'
-import 'firebase/database'
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app"
+import { getDatabase } from "firebase/database"
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const firebaseApp = firebase.initializeApp({
-  apiKey: 'AIzaSyBKufOu70yt4FDO3G5itdPr9DqNn3iXNmw',
-  authDomain: 'chatbox-app-d7e4f.firebaseapp.com',
-  databaseURL: 'https://chatbox-app-d7e4f.firebaseio.com'
-})
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBiDFzvqJKu91AlPdsOH82fJtfnxYrwcXY",
+  authDomain: "chatbox-59b2c.firebaseapp.com",
+  databaseURL: "https://chatbox-59b2c-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "chatbox-59b2c",
+  storageBucket: "chatbox-59b2c.firebasestorage.app",
+  messagingSenderId: "1063502553090",
+  appId: "1:1063502553090:web:c5290d1cd41113b76b071b",
+  measurementId: "G-TJM4XZVZ7D"
+};
 
-const base = Rebase.createClass(firebase.database())
+/* // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-export { firebaseApp }
+ */
+
+const base = initializeApp(firebaseConfig)
+
+// Base de données
+export const database = getDatabase(base)
 
 export default base
