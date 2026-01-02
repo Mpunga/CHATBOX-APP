@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Formulaire.css';
 
 export default class Formulaire extends Component {
 
@@ -8,39 +9,41 @@ export default class Formulaire extends Component {
   }
 
   createMessage = () => {
-    const { addMessage, pseudo, length } = this.props
+    const { addMessage, pseudo, length } = this.props;
 
-    if (!this.state.message.trim()) return
+    if (!pseudo) return; // si pas de user, ne rien faire
+    if (!this.state.message.trim()) return; // message vide
 
     const message = {
-      pseudo: pseudo || "Invité",
+      pseudo,          // pseudo venant de Firebase
       message: this.state.message
     }
 
-    addMessage(message)
+    addMessage(message);
 
     // Reset
     this.setState({ 
       message: '', 
       length 
-    })
+    });
   }
 
   handleSubmit = event => {
-    event.preventDefault()
-    this.createMessage()
+    event.preventDefault();
+    this.createMessage();
   }
 
   handleChange = event => {
-    const message = event.target.value
-    const length = this.props.length - message.length
+    const message = event.target.value;
+    const length = this.props.length - message.length;
 
-    this.setState({ message, length })
+    this.setState({ message, length });
   }
 
-  handleKeyUp = event => {
-    if(event.key === 'Enter') {
-      this.createMessage()
+  handleKeyDown = event => {
+    if (event.key === 'Enter' && !event.shiftKey) { // Enter envoie
+      event.preventDefault();
+      this.createMessage();
     }
   }
 
@@ -50,21 +53,22 @@ export default class Formulaire extends Component {
         <textarea
           value={this.state.message}
           onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
           rows={1}
           placeholder="Tape ton message..."
           onInput={(e) => {
-      e.target.style.height = "auto";
-      e.target.style.height = e.target.scrollHeight + "px";
-  }}
-/> 
+            e.target.style.height = "auto";
+            e.target.style.height = e.target.scrollHeight + "px";
+          }}
+        />
+
         <div className='info'>
           { this.state.length }
         </div>
         
-        <button type='submit'>
+        <button type='submit' className="send-btn">
           Envoyer 🚀
         </button> 
-
       </form>
     )
   }

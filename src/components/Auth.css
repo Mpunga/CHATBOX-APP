@@ -1,0 +1,100 @@
+/* Container centrée */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #4facfe, #00f2fe);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Box */
+.auth-box {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  width: 350px;
+  max-width: 90%;
+  transition: all 0.4s ease;
+}
+
+.auth-box.register {
+  transform: scale(1.02);
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 8px rgba(79,172,254,0.5);
+  outline: none;
+}
+
+/* Boutons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  background: #4facfe;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #00f2fe;
+  transform: translateY(-2px);
+}
+
+.toggle-link {
+  text-align: center;
+  margin-top: 15px;
+  color: #4facfe;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.toggle-link:hover {
+  color: #00f2fe;
+}
+
+/* Messages d'erreur */
+.error {
+  color: #f44336;
+  font-size: 13px;
+  margin: 5px 0;
+  text-align: left;
+}
+
+/* Animation erreur */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+.animate-error {
+  animation: shake 0.4s ease;
+}

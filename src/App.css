@@ -116,3 +116,45 @@ textarea {
   resize: none; /* empêche le redimensionnement manuel */
   overflow-y: hidden; /* cache le scroll */
 }
+
+.header {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-badge {
+  background-color: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: #ff4d4f;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #ff7875;
+}
